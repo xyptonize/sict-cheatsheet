@@ -10,13 +10,18 @@ if __name__ == '__main__':
     print("Plain text : ")
     print(plaintext,"\n\n\n")
     # 4 ASCII текст файл шифрлэх.
-    cipher_text = getTranslatedMessage('b', plaintext, xmod26(getKey()))
+    cipher_text = getTranslatedMessage('e', plaintext, xmod26(getKey()))
 
     with open("ciphertext.txt", 'w') as f:
         f.write(cipher_text)
 
     print("Encrypted text : ")
     print(cipher_text,"\n\n\n")
+    decryptedtext = getTranslatedMessage('d', cipher_text, xmod26(getKey()))
+    with open("decryptedtext.txt", 'w') as f:
+        f.write(decryptedtext)
+    print("Decrypted text : ")
+    print(decryptedtext,"\n\n\n")
     # 5. Текст файлын тэмдэгтийн давтамж магадлалыг ол
     frequency = char_frequency(plaintext)
 
