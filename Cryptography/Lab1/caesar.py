@@ -33,7 +33,7 @@ def getKey():
                 print("Number entered is greater than 26 converted to 1-26 is : ",xmod26(key))
                 return(xmod26(key))
         else:
-        	print('Enter number except 0 : ')
+        	print('Enter number except 0! ')
         # if (key >= 1 and key <= MAX_KEY_SIZE):
         #     return key
 
@@ -62,6 +62,7 @@ def getTranslatedMessage(mode, message, key):
             translated += chr(num)
         else:
             translated += symbol
+
     return translated
 
 
