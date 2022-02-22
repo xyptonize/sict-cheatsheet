@@ -17,11 +17,21 @@ if __name__ == '__main__':
 
     print("Encrypted text : ")
     print(cipher_text,"\n\n\n")
+
+    tr = True
+    cp = cipher_text.split()
+    pt = plaintext.split()
+
+    for i in range(0,len(pt)):
+        if pt[i]!=cp[i]:
+            tr = False
+    print(tr,"\n\n\n")
     decryptedtext = getTranslatedMessage('d', cipher_text, xmod26(getKey()))
     with open("decryptedtext.txt", 'w') as f:
         f.write(decryptedtext)
     print("Decrypted text : ")
     print(decryptedtext,"\n\n\n")
+
     # 5. Текст файлын тэмдэгтийн давтамж магадлалыг ол
     frequency = char_frequency(plaintext)
 
@@ -29,4 +39,4 @@ if __name__ == '__main__':
         print("{} character frequency {}".format(i, j,))
 
     for i, j in frequency.items():
-        print("{} character probability {}/{}".format(i, j, len(plaintext)))
+        print("{} character probability {}%".format(i, j/len(plaintext)))
